@@ -1,0 +1,314 @@
+/* stylep-style.css - Professional styling for Patient Dashboard */
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #e9f0f5 0%, #d4e0e8 100%);
+    min-height: 100vh;
+    color: #1a2a3a;
+    line-height: 1.5;
+}
+
+/* ===== NAVIGATION ===== */
+.main-nav {
+    background: linear-gradient(90deg, #0b3b5f 0%, #1b5a7a 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    backdrop-filter: blur(4px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #f0f9ff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.05);
+}
+
+.nav-links a:hover {
+    background: #ffb347;
+    color: #1a2a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #0b3b5f, #2c7da0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid #ffb347;
+    display: inline-block;
+}
+
+/* ===== BOOKING CARD ===== */
+.booking-card {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+    padding: 1.8rem 2rem;
+    margin: 2rem 0 2.5rem;
+    transition: transform 0.2s;
+    border: 1px solid rgba(255,180,71,0.3);
+}
+
+.booking-card h3 {
+    font-size: 1.7rem;
+    color: #0b3b5f;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.booking-card h3::before {
+    content: "📅";
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 700;
+    color: #1e4a6e;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+select, input[type="date"] {
+    padding: 12px 16px;
+    border-radius: 60px;
+    border: 2px solid #cbdbe0;
+    font-size: 1rem;
+    background: #fefef7;
+    transition: all 0.25s;
+    outline: none;
+    font-family: inherit;
+}
+
+select:focus, input[type="date"]:focus {
+    border-color: #ffb347;
+    box-shadow: 0 0 0 3px rgba(255, 180, 71, 0.3);
+    background: white;
+}
+
+button[type="submit"] {
+    background: linear-gradient(95deg, #1b5a7a, #0b3b5f);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(95deg, #ff9f2e, #ffb347);
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(255, 180, 71, 0.4);
+    color: #1a2a3a;
+}
+
+/* ===== APPOINTMENT HISTORY TABLE ===== */
+.report-section {
+    background: rgba(255,255,255,0.9);
+    border-radius: 28px;
+    padding: 1.5rem;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+}
+
+.report-section h3 {
+    font-size: 1.5rem;
+    color: #0b3b5f;
+    margin-bottom: 1.2rem;
+    padding-left: 0.5rem;
+    border-left: 8px solid #ffb347;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+}
+
+.data-table thead tr {
+    background: #0b3b5f;
+    color: white;
+    font-weight: 600;
+}
+
+.data-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #e2edf2;
+    color: #1f3e4b;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background: #fff6e8;
+    transition: 0.2s;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #eef2f5;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* dynamic status colors (if needed by status values, but generic style remains clean) */
+.status-badge:contains("Confirmed") {
+    background: #c8f0e7;
+    color: #0f6b4a;
+}
+
+.status-badge:contains("Pending") {
+    background: #ffe3c2;
+    color: #b45f06;
+}
+
+.status-badge:contains("Cancelled") {
+    background: #ffe0e0;
+    color: #b33;
+}
+
+/* fallback for status dynamic coloring via JS if needed, otherwise just polished */
+.data-table td:last-child .status-badge {
+    font-weight: 600;
+}
+
+/* ===== EMPTY STATE ===== */
+.data-table tbody tr td[colspan="4"] {
+    text-align: center;
+    padding: 2.5rem;
+    color: #6c8d9c;
+    font-style: italic;
+    background: #fafcfd;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .data-table th, .data-table td {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .booking-card {
+        padding: 1.2rem;
+    }
+    
+    button[type="submit"] {
+        padding: 12px;
+    }
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e8ef;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1b5a7a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb347;
+}
+
+/* ===== WELCOME ENHANCEMENT ===== */
+.container h2 + .booking-card {
+    margin-top: 1rem;
+}
